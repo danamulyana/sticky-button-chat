@@ -1,0 +1,265 @@
+.con-chat{
+    position: fixed;
+    left: 20px;
+    top: 100px;
+    color: #fff;
+    transition: transform .25s ease;
+}
+.open .con-sms{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+.con-icon{
+    width: 70px;
+    height: 60px;
+    background: rgb(255, 123, 91);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 20px 20px 5px;
+    transform: translate(-50%,-50%);
+    transition: all .25s ease;
+    border: 0;
+    padding-left: 10px;
+    color: #fff;
+}
+.con-icon i {
+    font-size: 1.4rem;
+    pointer-events: none;
+}
+.openRight .con-icon{
+    border-radius: 20px 5px 5px 20px;
+    padding-left: 0px;
+    padding-right: 10px;
+}
+.openRight .con-sms{
+    transform-origin: right top;
+    left: auto;
+    right: 65px;
+    border-radius: 26px 10px 26px 26px;
+}
+.openTop .con-sms{
+    transform-origin: left bottom;
+    top: auto;
+    bottom: 100px;
+    border-radius: 26px 26px 10px 26px;
+}
+.openTop.openRight .con-sms{
+    transform-origin: right bottom;
+    top: auto;
+    bottom: 100px;
+    border-radius: 26px 26px 10px 26px;
+}
+.con-sms{
+    position: absolute;
+    left: -5px;
+    top: 40px;
+    background: #fff;
+    color: #000;
+    width: 320px;
+    border-radius: 10px 26px 26px 26px;
+    overflow: hidden;
+    transform: scale(.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: all .25s ease;
+    transform-origin: left top;
+    box-shadow: 0px 0px 35px 0px rgba(0,0,0,.06);
+}
+.con-sms > header{
+    position: relative;
+}
+.con-sms > header h3{
+    padding: 10px 20px;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+}
+.con-sms > header:after{
+    content: '';
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: #000;
+    width: 30px;
+    height: 100%;
+    z-index: 100;
+    background: linear-gradient(90deg, #fff 0%, rgba(255,255,255,.001) 100%);
+}
+.con-sms > header:before{
+    content: '';
+    right: 0;
+    top: 0;
+    position: absolute;
+    background: #000;
+    width: 30px;
+    height: 100%;
+    z-index: 100;
+    background: linear-gradient(-90deg, #fff 0%, rgba(255,255,255,.001) 100%);
+}
+.con-sms > header .con-avatars{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: auto;
+    padding-left: 5px;
+    z-index: 10;
+    width: 100%;
+}
+.sms{
+    padding: 7px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+.sms:first-child{
+    border-top: 0px solid rgba(0,0,0,.1);
+}
+.sms .con-text{
+    flex: 1;
+}
+.sms h6 {
+    font-size: .85rem;
+    padding: 0px 10px;
+}
+.sms p {
+    padding: 0px 10px;
+    font-size: .75rem;
+    opacity: .7;
+    font-weight: 500;
+}
+.active:after{
+    content: '';
+    right: -2px;
+    top: -2px;
+    background: rgb(137,236,28);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    position: absolute;
+    border: 2px solid #fff;
+}
+.con-img img{
+    width: 50px;
+    border-radius: 20px;
+}
+.con-list{
+    overflow: auto;
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    padding: 15px;
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+.con-sms > header .con-avatars .con-img{
+    margin: 8px;
+}
+.space{
+    position: relative;
+    width: 20px;
+    min-width: 20px;
+    height: 10px;
+}
+.con-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.con-chat-user{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #fff;
+    z-index: 500;
+    transform: translate(100%);
+    transition: all .25s ease;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.con-chat-user header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,.06);
+}
+.con-chat-user header .back{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50%;
+    background: #fff;
+}
+.con-chat-user header .back i {
+    font-size: 1.2rem;
+}
+.con-chat-user header h3{
+    padding-left: 10px;
+    font-size: 1rem;
+}
+.con-chat-user .chat-texts{
+    flex: 1;
+}
+.openChat .con-chat-user{
+    transform: translate(0);
+}
+.chat-texts{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.message{
+    padding: 15px;
+    background: #f1f3f6;
+    font-size: .75rem;
+    width: calc(90% - 30px);
+    margin: 15px;
+    border-radius: 5px 20px 20px 20px;
+}
+.message.send{
+    margin-left: auto;
+    background: rgb(255,123,91);
+    color: #fff;
+}
+.con-chat-user footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+}
+.con-chat-user footer input{
+    padding: 10px 15px;
+    flex: 1;
+    display: block;
+    border-radius: 20px;
+    border: 0;
+    background: #f1f3f6;
+}
+.con-chat-user footer button{
+    margin-left: 10px;
+    border-radius: 50%;
+    border: 0;
+    width: 42px;
+    height: 42px;
+    background: rgb(255, 123, 91);
+    color: #fff;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
